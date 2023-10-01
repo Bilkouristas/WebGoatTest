@@ -27,20 +27,20 @@ jobs:
 
       - name: Install Dependencies 
         run: |
-          cd WebGoat
+          cd WebGoat-main
           chmod +x mvnw
           ./mvnw clean install
 
       - name: Build Docker image locally
         run: |
-          cd WebGoat
+          cd WebGoat-main
           chmod +x mvnw
           docker build -f Dockerfile . -t webgoat/webgoat 
 
       - name: Run the project
         id: running  
         run: |
-          cd WebGoat
+          cd WebGoat-main
           chmod +x mvnw
           ./mvnw spring-boot:run &
       
